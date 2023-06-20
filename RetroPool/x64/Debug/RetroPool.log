@@ -1,0 +1,24 @@
+﻿  Player.cpp
+C:\Users\nedne\Desktop\games\Map Walking Game\RetroPool\Player.cpp(28,14): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\nedne\Desktop\games\Map Walking Game\RetroPool\Player.cpp(29,13): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\nedne\Desktop\games\Map Walking Game\RetroPool\Player.cpp(30,15): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\nedne\Desktop\games\Map Walking Game\RetroPool\Player.cpp(31,16): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+  main.cpp
+  Generating Code...
+  RetroPool.vcxproj -> C:\Users\nedne\Desktop\games\Map Walking Game\x64\Debug\RetroPool.exe
