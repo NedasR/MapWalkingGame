@@ -29,4 +29,6 @@ void SetPos(float X, float Y);
 sf::Vector2f PlayerCords();
 
 sf::Vector2f GetPos();
+
+void stillSpriteUpdate();
 };

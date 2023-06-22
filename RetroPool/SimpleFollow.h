@@ -10,5 +10,7 @@ public:
 	void FollowMaster(Player& Master, Player &Follower,float playerspeed);
 
 	float getDistance(Player& Master, Player& Follower);
+
+
 };
 

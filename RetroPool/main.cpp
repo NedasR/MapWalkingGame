@@ -13,8 +13,9 @@ int main()
     Map.LoadMap();
     MC.SetRect(0, 0, 64, 64);
     chicken.SetRect(0, 0, 32, 32);
-    int Spritenum , Spritenum1;
-    Spritenum = Spritenum1 = 0;
+    int Spritenum;
+    Spritenum = 0;
+    bool SpritStanding = false;
     sf::Clock dt;
     sf::Time ConvertDT;
     float DeltaTime = 0;
@@ -48,26 +49,38 @@ int main()
             MC.SpriteMovemnet(3, Spritenum, 0,64);
            // chicken.SpriteMovemnet(2, Spritenum, 64,32);
             MC.Movement(0, playerspeed);
+            SpritStanding = false;
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
         {
             MC.SpriteMovemnet(3, Spritenum, 64,64);
            // chicken.SpriteMovemnet(2, Spritenum, 96,32);
             MC.Movement(-playerspeed, 0);
+            SpritStanding = false;
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         {
             MC.SpriteMovemnet(3, Spritenum, 128,64);
             //chicken.SpriteMovemnet(2, Spritenum, 32,32);
             MC.Movement(playerspeed, 0);
+            SpritStanding = false;
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
         {
             MC.SpriteMovemnet(3, Spritenum, 192,64);
             //chicken.SpriteMovemnet(2, Spritenum, 0,32);
             MC.Movement(0, -playerspeed);
+            SpritStanding = false;
         }
+        if (SpritStanding) 
+        {
+            MC.stillSpriteUpdate();
+            Spritenum = 0;
+        }
+        SpritStanding = true;
+
         Dist.FollowMaster(MC, chicken,playerspeed);
+
         view.setCenter(MC.PlayerCords());
         window.setView(view);
 
