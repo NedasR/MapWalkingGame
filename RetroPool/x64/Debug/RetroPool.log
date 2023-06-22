@@ -1,4 +1,5 @@
-﻿  Player.cpp
+﻿  main.cpp
+  Player.cpp
 C:\Users\nedne\Desktop\games\Map Walking Game\RetroPool\Player.cpp(28,14): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
           with
           [
@@ -19,6 +20,6 @@ C:\Users\nedne\Desktop\games\Map Walking Game\RetroPool\Player.cpp(31,16): warni
           [
               T=int
           ]
-  main.cpp
+  SimpleFollow.cpp
   Generating Code...
   RetroPool.vcxproj -> C:\Users\nedne\Desktop\games\Map Walking Game\x64\Debug\RetroPool.exe

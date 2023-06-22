@@ -69,3 +69,32 @@ void Player::SetPos(float xX, float yY)
 	Y = yY;
 	player.setPosition(X, Y);
 }
+
+sf::Vector2f Player::GetPos()
+{
+	return player.getPosition();
+}
+
+void Player::FollowerSpriteMovemnet(Player chicken,bool &S, bool &A, bool &D, bool &W,int &Spritenum)
+{
+	if (S)
+	{
+		chicken.SpriteMovemnet(2, Spritenum, 64, 32);
+		S = false;
+	}
+	if (A)
+	{
+		chicken.SpriteMovemnet(2, Spritenum, 96, 32);
+		A = false;
+	}
+	if (D)
+	{
+		chicken.SpriteMovemnet(2, Spritenum, 32, 32);
+		D = false;
+	}
+	if (W)
+	{
+		chicken.SpriteMovemnet(2, Spritenum, 0, 32);
+		W = false;
+	}
+}

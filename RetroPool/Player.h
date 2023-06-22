@@ -8,6 +8,7 @@ sf::RectangleShape player;
 sf::IntRect Rect;
 sf::Clock time;
 sf::Time timer;
+int spritenum;
 float X, Y;
 public:
 
@@ -27,4 +28,7 @@ void SetPos(float X, float Y);
 
 sf::Vector2f PlayerCords();
 
+sf::Vector2f GetPos();
+
+void FollowerSpriteMovemnet(Player chicken,bool &S, bool &A, bool &D, bool &W,int &Spritenum);
 };
