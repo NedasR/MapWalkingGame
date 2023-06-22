@@ -68,7 +68,6 @@ int main()
             MC.Movement(0, -playerspeed);
         }
         Dist.FollowMaster(MC, chicken,playerspeed);
-
         view.setCenter(MC.PlayerCords());
         window.setView(view);
 
