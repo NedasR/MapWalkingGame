@@ -16,17 +16,22 @@ void SimpleFollow::FollowMaster(Player& Master, Player& Follower,float playerspe
 		sf::Vector2f follow = Follower.GetPos();
 		sf::Vector2f master = Master.GetPos();
 		//the follow.x-1 is meant to give some wiggle room for the float decimals
-		if (follow.x-1 > master.x) {
-			follow.x -= playerspeed/2;
+		
+		if ((follow.y+1 >= master.y && follow.y-1 <= master.y))
+		{
+			playerLR = false;
 		}
-		else if (follow.x+1 < master.x) {
-			follow.x += playerspeed/2;
+		if (follow.x-1 > master.x && (!playerLR)) {
+			follow.x -= playerspeed;
+		}
+		else if (follow.x+1 < master.x && (!playerLR)) {
+			follow.x += playerspeed;
 		}
 		else if (follow.y-1 > master.y) {
-			follow.y -= playerspeed/2;
+			follow.y -= playerspeed;
 		}
 		else if (follow.y+1 < master.y) {
-			follow.y += playerspeed/2;
+			follow.y += playerspeed;
 		}
 		Follower.SetPos(follow.x, follow.y);
 	}

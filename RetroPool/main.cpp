@@ -57,6 +57,7 @@ int main()
            // chicken.SpriteMovemnet(2, Spritenum, 96,32);
             MC.Movement(-playerspeed, 0);
             SpritStanding = false;
+            Dist.playerLR = true;
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         {
@@ -64,6 +65,7 @@ int main()
             //chicken.SpriteMovemnet(2, Spritenum, 32,32);
             MC.Movement(playerspeed, 0);
             SpritStanding = false;
+            Dist.playerLR = true;
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
         {
@@ -80,6 +82,7 @@ int main()
         SpritStanding = true;
 
         Dist.FollowMaster(MC, chicken,playerspeed);
+        Dist.playerLR = false;
 
         view.setCenter(MC.PlayerCords());
         window.setView(view);

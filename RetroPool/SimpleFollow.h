@@ -4,6 +4,7 @@
 class SimpleFollow
 {
 public:
+	bool playerLR;
 	
 	SimpleFollow();
 
