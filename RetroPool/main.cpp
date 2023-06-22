@@ -47,14 +47,12 @@ int main()
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
         {
             MC.SpriteMovemnet(3, Spritenum, 0,64);
-           // chicken.SpriteMovemnet(2, Spritenum, 64,32);
             MC.Movement(0, playerspeed);
             SpritStanding = false;
         }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
         {
             MC.SpriteMovemnet(3, Spritenum, 64,64);
-           // chicken.SpriteMovemnet(2, Spritenum, 96,32);
             MC.Movement(-playerspeed, 0);
             SpritStanding = false;
             FollwerMec.playerLR = true;
@@ -62,7 +60,6 @@ int main()
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         {
             MC.SpriteMovemnet(3, Spritenum, 128,64);
-            //chicken.SpriteMovemnet(2, Spritenum, 32,32);
             MC.Movement(playerspeed, 0);
             SpritStanding = false;
             FollwerMec.playerLR = true;

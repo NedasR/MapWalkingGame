@@ -21,6 +21,7 @@ void SimpleFollow::FollowMaster(Player& Master, Player& Follower,float playerspe
 		{
 			playerLR = false;
 		}
+
 		if (follow.x-1 > master.x && (!playerLR)) {
 			follow.x -= playerspeed / Folower_DividedSpeed;
 			WhichRow = 96;
@@ -37,11 +38,7 @@ void SimpleFollow::FollowMaster(Player& Master, Player& Follower,float playerspe
 			follow.y += playerspeed / Folower_DividedSpeed;
 			WhichRow = 64;
 		}
-		/*
-		if (getDistance(Master, Follower) >= 31)
-		{
-			Spritenum = 0;
-		}*/
+
 		Follower.SetPos(follow.x, follow.y);
 		playerLR = false;
 		
