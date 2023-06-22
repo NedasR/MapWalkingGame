@@ -67,7 +67,6 @@ int main()
             //chicken.SpriteMovemnet(2, Spritenum, 0,32);
             MC.Movement(0, -playerspeed);
         }
-        chicken.FollowerSpriteMovemnet(chicken, Dist.S, Dist.A, Dist.D, Dist.W,Spritenum1);
         Dist.FollowMaster(MC, chicken,playerspeed);
 
         view.setCenter(MC.PlayerCords());

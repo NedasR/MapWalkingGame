@@ -4,7 +4,6 @@
 class SimpleFollow
 {
 public:
-	bool S, A, D, W;
 	
 	SimpleFollow();
 
