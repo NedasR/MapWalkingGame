@@ -75,8 +75,8 @@ sf::Vector2f Player::GetPos()
 	return player.getPosition();
 }
 
-void Player::stillSpriteUpdate()
+void Player::stillSpriteUpdate(int WhichRect = 0)
 {
-	Rect.left = 0;
+	Rect.left = WhichRect;
 	player.setTextureRect(Rect);
 }

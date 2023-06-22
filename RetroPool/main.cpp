@@ -9,7 +9,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(1200, 800), "Coffie's game!");
     Player MC, chicken;
     RanderMap Map;
-    SimpleFollow Dist;
+    SimpleFollow FollwerMec;
     Map.LoadMap();
     MC.SetRect(0, 0, 64, 64);
     chicken.SetRect(0, 0, 32, 32);
@@ -51,46 +51,50 @@ int main()
             MC.Movement(0, playerspeed);
             SpritStanding = false;
         }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
         {
             MC.SpriteMovemnet(3, Spritenum, 64,64);
            // chicken.SpriteMovemnet(2, Spritenum, 96,32);
             MC.Movement(-playerspeed, 0);
             SpritStanding = false;
-            Dist.playerLR = true;
+            FollwerMec.playerLR = true;
         }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         {
             MC.SpriteMovemnet(3, Spritenum, 128,64);
             //chicken.SpriteMovemnet(2, Spritenum, 32,32);
             MC.Movement(playerspeed, 0);
             SpritStanding = false;
-            Dist.playerLR = true;
+            FollwerMec.playerLR = true;
         }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
         {
             MC.SpriteMovemnet(3, Spritenum, 192,64);
-            //chicken.SpriteMovemnet(2, Spritenum, 0,32);
+            
             MC.Movement(0, -playerspeed);
             SpritStanding = false;
         }
         if (SpritStanding) 
         {
-            MC.stillSpriteUpdate();
+            MC.stillSpriteUpdate(0);
             Spritenum = 0;
         }
         SpritStanding = true;
 
-        Dist.FollowMaster(MC, chicken,playerspeed);
-        Dist.playerLR = false;
-
+        FollwerMec.FollowMaster(MC, chicken,playerspeed);
+        chicken.SpriteMovemnet(2, FollwerMec.Spritenum, FollwerMec.SpriteDiraction(), 32);
+        if (FollwerMec.getDistance(MC, chicken) <= 31)
+        {
+            chicken.stillSpriteUpdate(32);
+            FollwerMec.Spritenum = 1;
+        }
         view.setCenter(MC.PlayerCords());
         window.setView(view);
 
         window.clear();
         Map.DrawMap(window);
-        MC.drawplayer(window);
         chicken.drawplayer(window);
+        MC.drawplayer(window);
         window.display();
     }
 

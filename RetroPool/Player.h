@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
+
+
 class Player
 {
 sf::Texture Tex;
@@ -30,5 +32,5 @@ sf::Vector2f PlayerCords();
 
 sf::Vector2f GetPos();
 
-void stillSpriteUpdate();
+void stillSpriteUpdate(int WhichRect);
 };
